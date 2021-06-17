@@ -1,0 +1,22 @@
+O que seria bom ver nessa resposta?
+
+
+
+Peso 2: Criar uma classe que herda de HttpServlet e o motivo
+Peso 2: Definir o método que chama service/doPost e o motivo
+Peso 2: Utilizar o método post e o motivo
+Peso 2: Utilização de um status de redirect e o motivo
+Peso 1: Criação da classe Autor e o motivo
+Peso 1: Pegar os valores dos parâmetros através do método getParameter e o motivo (apesar de aqui ser até bem direto)
+
+
+
+Resposta do Especialista:
+
+Objetivo de aprendizado: Criar a classe NovoAutorServlet e fazer ela herdar de HTTP Servlet.
+Motivo da escolha: Escolhi esse objetivo porque é necessário herdar dessa classe para obedecer a interface pública esperada pela implementação da especificação de Servlets. Por exemplo o tomcat.
+Criar o método doPost para receber os dados .
+Motivo da escolha: Porque eu quero garantir que essa servlet só aceite requisição do tipo post
+Acessar os valores que vieram nos parâmetros e em função deles criaria o novo objeto autor. É necessário fazer este processo de conversão dos dados que vieram da requisição para os objetos da nossa própria aplicação.
+Criaria o atributo que representa a lista na classe NovoAutorServlet. Eu faria isso porque a instância da Servlet é única e todo valor guardado no atributo declarado nela vive enquanto o servidor estiver de pé.
+Retornaria o status 302 para indicar um redirecionamento para o navegador. Aqui eu me apoio no pattern redirect after post, para prevenir o reenvio do post anterior, que causaria uma adição a mais.
