@@ -252,7 +252,7 @@ public class RemoveAutorServlet extends HttpServlet {
 <p align="justify"> :robot: O método RequestDispatcher () define um objeto que recebe solicitações do cliente e as envia para qualquer recurso (como um servlet, arquivo HTML ou arquivo JSP) no servidor. O contêiner de servlet cria o RequestDispatcherobjct, que é usado como um wrapper em torno de um recurso do servidor localizado em um caminho específico ou fornecido por um nome específico. Essa interface tem como objetivo envolver servlets, mas um contêiner de servlet pode criar RequestDispatcher objetos para envolver qualquer tipo de recurso. <a href="https://docs.oracle.com/javaee/7/api/javax/servlet/RequestDispatcher.html">🔗 sendRedirect</a>  :robot:</p>
   
 
-<p align="center">  <img src=" https://media.tenor.com/images/c664f0c31082ab41b8c170909d224ece/tenor.gif" width="150" height="150" /> </p>
+<p align="center">  <img src="https://media1.tenor.com/images/00efa8c07f5a8b537b045544b6782e70/tenor.gif?itemid=4180838" width="280" height="150" /> </p>
  
   
 <p align="justify"> :robot: Dentro deste contexto vamos utilizar o redirecionamento (sendRedirect) - com o cliente recebendo uma resposta http em cujo header haverá a informação de que ele deve requisitar outra página, e o browser fará esta requisição. Ou seja, o redirecionamento ocorrerá no lado no cliente, tais como: 
