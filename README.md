@@ -1,7 +1,5 @@
-# JavaServlet
-
 <h1 align="center">
-    <a href="https://www.java.com/pt-BR/">🔗 JPA2</a>
+    <a href="https://cursos.alura.com.br/course/servlets-fundamentos-programacao-web-java">🔗 JavaServlet </a>
 </h1>
 
 <p align="center">🚀 Formulário de proposta de solução - Java Servlet: Fundamentos da programação Web Java 🚀 </p>
