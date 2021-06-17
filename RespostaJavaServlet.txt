@@ -1,0 +1,28 @@
+Vamos inicialmente criar a classe que foi requisidada intitulada "Autor", que possou os atributos que foram pedidos como nome, e-mail e em conjunto um Id. Em seguida vamos criar uma classe denominada Banco responsável por salvar em memórias as informações sobre os autores que vamos fornecer.
+
+Dentro da classe Banco teremos os seguintes métodos:
+•	Uma método que cadastra novos autores;
+•	Uma método que edita autores;
+•	Uma método que exclui autores;
+•	Uma método que lista os autores cadastrados.
+
+Vamos iniciar criando um projeto Dynamic Web Project. Os envios de dados serão feitos através do método POST (a fim anexar os dados no corpo da mensagem). Utilizaremos Servelet´s para realizar as interações entre as classes supracitadas uma vez que Servlet (servidorzinho em tradução livre) é uma classe Java usada para estender as funcionalidades de um servidor. Apesar dos servlets poderem responder a quaisquer tipos de requisições, eles normalmente são usados para estender as aplicações hospedadas por servidores web, desta forma eles podem ser imaginados como Applets Java que rodam em servidores em vez de rodarem nos navegadores web. 
+
+É importante destacar nesse ponto que o protocolo HTTP define oito métodos (GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS e CONNECT) que indicam a ação a ser realizada no recurso especificado. o método determina o que o servidor deve fazer com a URL fornecida no momento da requisição de um recurso. A classe HTTPServlet fornece uma classe abstrata para ser uma subclasse de um servlet HTTP adequados a um website. A subclasse de HTTPServlet deve substituir pelo menos um método, normalmente um deles é doGet, se o servlet suporta solicitações HTTP GET ou doPost, para solicitações HTTP POST ou os outros métodos suportados pela classe HTTPServlet. Basicamente você utiliza o método doGet sempre que a requisição que você faz não altere o estado do servidor, como uma consulta, uma busca e etc. O método doPost envia dados para serem processados (por exemplo, dados de um formulário HTML) para o recurso especificado. Os dados são incluídos no corpo do comando. 
+
+Desta forma teremos vamos criar utilizando doPost - AlteraAutorServlet e NovoAutorServlet  e doGet - ListarAutoresServlet, MostrarAutorServlet e RemoveAutorServlet, sobrescrevendo o motedo através da anotação @Override; Em conjunto será utilizado a anotação @WebServleta para declarar um servlet, fornecendo a classe  anotada a possibilidade de estender a classe javax.servlet.http.HttpServlet. 
+
+Por fim é importante descrever dois métodos, sendo eles sendRedirect e RequestDispatcher:
+O método sendRedirect () da interface HttpServletResponse pode ser usado para redirecionar a resposta para outro recurso, que pode ser um arquivo servlet, jsp ou html. Aceita URL relativo e absoluto e funciona no lado do cliente porque usa a barra de url do navegador para fazer outra solicitação. Portanto, ele pode funcionar dentro e fora do servidor
+O método RequestDispatcher () define um objeto que recebe solicitações do cliente e as envia para qualquer recurso (como um servlet, arquivo HTML ou arquivo JSP) no servidor. O contêiner de servlet cria o RequestDispatcherobjct, que é usado como um wrapper em torno de um recurso do servidor localizado em um caminho específico ou fornecido por um nome específico. Essa interface tem como objetivo envolver servlets, mas um contêiner de servlet pode criar RequestDispatcher objetos para envolver qualquer tipo de recurso.
+  
+Dentro deste contexto vamos utilizar o redirecionamento (sendRedirect) - com o cliente recebendo uma resposta http em cujo header haverá a informação de que ele deve requisitar outra página, e o browser fará esta requisição. Ou seja, o redirecionamento ocorrerá no lado no cliente, tais como: 
+  
+•	AlteraAutorServlet redireciona  para listarAutores;
+•	NovoAutorServlet redireciona  para listarAutores;
+•	RemoveAutorServlet redireciona para listaAutores.
+  
+E teremos o encaminhamento (RequestDispatcher) - No segundo caso (forward), no lado do server a requisição do usuário será encaminhada para ser atendida por outro recurso (outro servlet). Este outro servlet eventualmente devolverá outra página para o usuário, tais como:
+  
+•	MostraAutorServlet encaminha para formAlteraAutor.jsp 
+•	ListarAutoresServlet encaminha para listaAutores.jsp 
